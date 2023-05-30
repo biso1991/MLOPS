@@ -45,9 +45,9 @@ RUN apt-get install -yq fish \
 # Remove scripts now that we're done with them
 RUN apt-get clean -y && rm -rf /tmp/scripts
 
-COPY ./requirements.txt  /tmp/requirements.txt
+COPY .requirements.txt  /tmp/requirements.txt
 
-RUN pip install /tmp/requirements.txt \
+RUN pip install  --no-cache /tmp/requirements.txt \
 && rm -rf /tmp/requirements.txt
 
 # Mount for docker-in-docker 
