@@ -64,7 +64,7 @@ RUN if [ -z $DeveloperBuild ]; then \
     else \
         curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l /vsdbg ; \
     fi       
-COPY ./requirements.txt  /tmp/requirements.txt
+COPY requirements.txt  /tmp/requirements.txt
 
 RUN pip install /tmp/requirements.txt \
 && rm -rf /tmp/requirements.txt
